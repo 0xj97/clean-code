@@ -19,6 +19,44 @@
 (square 40 "solid" "black")
 
 ; -------------------------------------------------------------------
-
 ; TRANSFORMATIONS
 
+(rotate 45 (rectangle 100 200 "solid" "yellow"))
+(flip-horizontal (right-triangle 100 100 "solid" "green"))
+(flip-vertical (right-triangle 100 100 "solid" "green"))
+
+; -------------------------------------------------------------------
+; COMBINING
+
+(overlay
+ (circle 50 "solid" "pink")
+ (circle 70 "solid" "red")
+ (circle 90 "solid" "yellow")
+ (circle 120 "solid" "blue")
+ )
+
+(above
+ (circle 50 "solid" "pink")
+ (circle 70 "solid" "red")
+ (circle 90 "solid" "yellow")
+ (circle 120 "solid" "blue")
+ )
+
+(beside (circle 50 "solid" "pink")
+ (circle 70 "solid" "red")
+ (circle 90 "solid" "yellow")
+ (rectangle 120 240 "solid" "blue")
+ )
+
+
+; -------------------------------------------------------------------
+; TEXT
+
+(define text-image (text "hello" 200 "brown"))
+
+; -------------------------------------------------------------------
+; PROPERTIES
+
+; gets the width of an image
+(image-width (text "hello" 200 "brown")) ; returns 421
+(image-width text-image) ; returns 421
